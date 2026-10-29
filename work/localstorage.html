@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задвч</title>
+    <style>
+        table{
+            border: 2px solid #790;
+        }
+        table td{border: 1px solid rgb(10, 8, 14);padding: 5px;}
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="inputTask" placeholder="Текст задачи">
+        <input type="datetime-local" id="inputDeadline">
+        <input type="submit">
+    </form>
+    <h3>Список задач:</h3>
+    <table id="result">
+        <thead>
+            <th>№</th>
+            <th>Задача</th>
+            <th>создано</th>
+            <th>дедлайн</th>
+        </thead>
+    </table>
+<script src="localstorage.js"></script>
+</body>
+</html>

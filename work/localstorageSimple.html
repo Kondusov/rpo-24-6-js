@@ -1,0 +1,54 @@
+<!-- // Посмотреть содержимое localStorage в браузере Google Chrome можно несколькими удобными способами:
+
+// Способ 1. Через Инструменты разработчика (DevTools) — графически
+
+// 1. Откройте нужную страницу в Google Chrome.
+// 2. Нажмите клавишу F12 (или сочетание Ctrl + Shift + I в Windows/Linux, либо Cmd + Option + I на macOS).
+// 3. В открывшейся панели перейдите на вкладку Application (в некоторых переводах — «Приложение»).
+// 4. В левом боковом меню найдите раздел Storage -> Local Storage (либо просто раскройте список Локальное хранилище).
+// 5. Кликните по нужному домену сайта — в таблице появятся пары ключ–значение (Key и Value).
+// 	• При клике на строку снизу отобразится развернутое значение выбранного ключа.
+// 	• Здесь же можно дважды кликнуть по ячейке, чтобы изменить данные, или по пустому месту, чтобы добавить новый ключ.
+
+// Способ 2. Через Консоль браузера (JavaScript)
+
+// Если вам нужно быстро просмотреть или вытащить данные через код:
+// 1. Откройте DevTools (F12).
+// 2. Перейдите на вкладку Console («Консоль»).
+// 3. Введите одну из команд:
+// 	• Посмотреть все содержимое в виде объекта:javascript
+// console.log(localStorage);
+
+// Получать строку из формы и добавлять в localstorage
+// при загрузке страницы отображать все записи из localstorage -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn_clear">удалить все записи</button><!--onclick="localStorage.clear(); location.reload()"-->
+    <form action="">
+        <input type="text">
+        <input type="submit">
+    </form>
+    <script>
+        document.querySelector('form').addEventListener('submit', (event)=>{
+            //event.preventDefault();
+            let text = document.querySelector('input[type="text"]').value;
+            console.log(text)
+            localStorage.setItem(localStorage.length, text);
+        });
+        for(i=0; i<localStorage.length; i++){
+            let elem = document.createElement('p');
+            elem.textContent = localStorage.getItem(i);
+            document.querySelector('body').append(elem);
+        }
+        btn_clear.addEventListener('click', ()=>{
+            localStorage.clear(); location.reload();
+        })
+    </script>
+</body>
+</html>

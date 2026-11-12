@@ -1,0 +1,2 @@
+Выберите, и решите любые три задачи.
+https://github.com/Kondusov/rpo-24-6-js/tree/main/exam/примерыЗаданий.txt
